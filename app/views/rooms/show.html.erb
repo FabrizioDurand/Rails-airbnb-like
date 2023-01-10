@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h1> Room at <%= @room.hotel.name %> </h1>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <img src="<%=@room.image_url%>" alt="room image" style="max-width:100%">
+        <div class="mt-3">
+          <h3>Capacity of <b><%= @room.capacity%> people</b></h3>
+          <h3>Price per night: <b><%= @room.price_per_night%> €</b></h3>
+          <h3>Rating: <b><%= @room.hotel.rating%>/5</b></h3>
+          <h3>Located at <b><%= @room.hotel.address%>:</b></h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <%# <div class="forming"> %>
+      <div>
+        <%=render "shared/form_booking", price: @room.price_per_night %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="pk.eyJ1IjoiZmFicml6aW9kdXJhbmQiLCJhIjoiY2xjMGFxczNxMWVubzNwcDM4MjhmNWUyZiJ9.8UMvZlSJ1cZDmKsK9Ri2xg">
+  </div>
+
+  <div class="text-center mt-5 mb-5">
+    <%= link_to "Back to available rooms", rooms_path, class: "btn btn-primary" %>
+  </div>
+</div>

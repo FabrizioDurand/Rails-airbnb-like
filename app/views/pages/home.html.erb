@@ -1,0 +1,11 @@
+<%= render "shared/home_banner"%>
+
+<div class = "d-flex justify-content-around align-content-around flex-wrap mt-5">
+  <% @rooms.each do |room| %>
+    <img class="img-banner" src="<%=room.image_url%>" alt="Hotel room image">
+  <% end %>
+</div>
+
+<div class = "mt-5 text-center">
+  <%= link_to "Show room availables", rooms_path, class: "btn btn-secondary" %>
+</div>

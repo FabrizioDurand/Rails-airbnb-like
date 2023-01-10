@@ -1,0 +1,22 @@
+<div class="container mt-3" data-controller="price">
+  <h2>Book this hotel room!</h2>
+  <div class="row mt-3">
+    <div class="col-6 d-flex">
+      <h4>Price per night :&nbsp;<h4 data-price-target="unitPrice"><%=price%></h4><h4>€</h4></h4>
+    </div>
+    <div class="col-6 d-flex">
+      <h4>Total price:&nbsp;<h4 data-price-target="price"><%= price %></h4></h4><h4>€</h4>
+    </div>
+  </div>
+  <div class = "mt-3">
+    <%= simple_form_for [@room, @booking], data: { controller: 'flatpickr' } do |f| %>
+      <div class="input" data-action="change->price#displayPrice">
+        <%= f.input :starts_at, label:"Check-in date", required: true, as: :string, :input_html => {data: { target: "price.startDate", flatpickr_target: "startDate" }}%>
+        <%= f.input :ends_at, label: "Check-out date", required: true, as: :string, :input_html => {data: { target: "price.endDate",  flatpickr_target: "endDate" }}%>
+      </div>
+      <div class="submit d-none" data-price-target="button">
+        <%= f.button :submit, 'Book this room', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
