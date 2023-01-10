@@ -20763,3 +20763,270 @@ Processing by RoomsController#index as HTML
 Completed 200 OK in 129ms (Views: 117.8ms | ActiveRecord: 10.2ms | Allocations: 33233)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-10 10:59:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_home_banner.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 973)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 773)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 284)
+  Rendered shared/_footer.erb (Duration: 0.3ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 87.1ms | Allocations: 48308)
+Completed 200 OK in 124ms (Views: 90.0ms | ActiveRecord: 3.7ms | Allocations: 59052)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2023-01-10 10:59:36 +0100
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:15
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mHotel Load (0.5ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.4ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.5ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.5ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.5ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  Rendered rooms/index.html.erb within layouts/application (Duration: 90.3ms | Allocations: 22285)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 237)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered shared/_footer.erb (Duration: 0.2ms | Allocations: 16)
+  Rendered layout layouts/application.html.erb (Duration: 149.6ms | Allocations: 32163)
+Completed 200 OK in 152ms (Views: 142.4ms | ActiveRecord: 9.0ms | Allocations: 33049)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2023-01-10 10:59:38 +0100
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-10 10:59:38 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 738)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 37.8ms | Allocations: 29055)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered shared/_footer.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 38980)
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.7ms | Allocations: 45362)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-10 10:59:44 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fabrizio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "fabrizio@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rooms/2
+Completed 302 Found in 427ms (ActiveRecord: 1.4ms | Allocations: 4528)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2023-01-10 10:59:44 +0100
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:30:in `set_room'
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 AND (hotels.latitude IS NOT NULL AND hotels.longitude IS NOT NULL)[0m  [["id", 1]]
+  ↳ app/controllers/rooms_controller.rb:19:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mHotel Load (0.2ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered shared/_form_booking.html.erb (Duration: 6.8ms | Allocations: 8229)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 9535)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 406)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered shared/_footer.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 19246)
+Completed 200 OK in 32ms (Views: 18.2ms | ActiveRecord: 2.8ms | Allocations: 27701)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2023-01-10 11:03:58 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:15
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.4ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.2ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.2ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.2ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  Rendered rooms/index.html.erb within layouts/application (Duration: 59.1ms | Allocations: 26764)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 11.6ms | Allocations: 6594)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 284)
+  Rendered shared/_footer.erb (Duration: 0.5ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 174.4ms | Allocations: 80134)
+Completed 200 OK in 188ms (Views: 161.3ms | ActiveRecord: 15.1ms | Allocations: 85915)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2023-01-10 11:03:59 +0100
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:30:in `set_room'
+  [1m[36mHotel Load (0.4ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 AND (hotels.latitude IS NOT NULL AND hotels.longitude IS NOT NULL)[0m  [["id", 7]]
+  ↳ app/controllers/rooms_controller.rb:19:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered shared/_form_booking.html.erb (Duration: 249.4ms | Allocations: 288840)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 253.5ms | Allocations: 290199)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 389)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered shared/_footer.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 261.8ms | Allocations: 300240)
+Completed 200 OK in 281ms (Views: 262.1ms | ActiveRecord: 3.7ms | Allocations: 308671)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-10 11:05:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_home_banner.html.erb (Duration: 1.0ms | Allocations: 132)
+  Rendered pages/home.html.erb within layouts/application (Duration: 6.3ms | Allocations: 972)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 39.7ms | Allocations: 8521)
+  Rendered shared/_flashes.html.erb (Duration: 1.4ms | Allocations: 311)
+  Rendered shared/_footer.erb (Duration: 0.8ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 292.1ms | Allocations: 55566)
+Completed 200 OK in 407ms (Views: 291.7ms | ActiveRecord: 19.3ms | Allocations: 66321)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2023-01-10 11:05:26 +0100
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:15
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mHotel Load (1.2ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.7ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.9ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.6ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.4ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.0ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mHotel Load (0.4ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  [1m[36mCACHE Hotel Load (0.1ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:23
+  Rendered rooms/index.html.erb within layouts/application (Duration: 138.0ms | Allocations: 20750)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:12
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | Allocations: 1245)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered shared/_footer.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered layout layouts/application.html.erb (Duration: 202.6ms | Allocations: 31961)
+Completed 200 OK in 208ms (Views: 191.3ms | ActiveRecord: 15.0ms | Allocations: 32847)
+
+
+Started GET "/rooms/3" for 127.0.0.1 at 2023-01-10 11:05:28 +0100
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:30:in `set_room'
+  [1m[36mHotel Load (0.9ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 AND (hotels.latitude IS NOT NULL AND hotels.longitude IS NOT NULL)[0m  [["id", 1]]
+  ↳ app/controllers/rooms_controller.rb:19:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mHotel Load (0.6ms)[0m  [1m[34mSELECT "hotels".* FROM "hotels" WHERE "hotels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:2
+  Rendered shared/_form_booking.html.erb (Duration: 327.5ms | Allocations: 289222)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 334.6ms | Allocations: 290586)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 389)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered shared/_footer.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 342.5ms | Allocations: 300627)
+Completed 200 OK in 411ms (Views: 343.8ms | ActiveRecord: 11.4ms | Allocations: 308887)
+
+

@@ -1,74 +1,68 @@
-# Rails Book Rooms
+# README
 
-Dans cet exercice, vous devez implémenter des fonctionnalités dans une application web `rails` à partir du cahier des charges spécifié ci-dessous et correspondant à votre sujet :
+This web app was made to book hotel rooms.
 
-```
-Vous devez créer une plateforme pour réserver des chambres d'hôtel à prix réduit
-```
+## Install
 
-## Setup
+### Clone the repository
 
-Clonez le dépôt GitHub et exécutez les commandes habituelles vous permettant de lancer l'application sur votre ordinateur.
-
-Si vous voyez s'afficher le message `rbenv: version 3.1.2 is not installed`, exécutez la commande suivante pour installez la version de `ruby` correspondante :
-
-```bash
-rbenv install 3.1.2 && gem install bundler rubocop pry pry-byebug
+```shell
+git clone git@github.com:FabrizioDurand/Rails-airbnb-like.git
+cd project
 ```
 
-Vous pourrez alors réexécuter les commandes habituelles vous permettant de lancer l'application.
+### Check your Ruby version
 
-## Base de données
+```shell
+ruby -v
+```
 
-Effectuez les modifications du code nécessaires à l'obtention du schema de données suivant :
+The ouput should start with something like `ruby 3.1.2`
 
-<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/assess/book_rooms_db_schema.png">
+If not, install the right ruby version following this link: https://www.ruby-lang.org/fr/documentation/installation/
 
-Une chambre n'est pas valide :
+### Install dependencies
 
-- Si elle n'a pas de capacité (de nombre de lits) indiquée.
-- Si la capacité de sa chambre n'est pas un entier et si elle n'est pas supérieure à zéro.
-- Si elle n'a pas de prix journalier.
-- Si son prix journalier est inférieur ou égal à zéro.
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-Un hôtel n'est pas valide :
+```shell
+bundle && yarn
+```
 
-- S'il n'a pas de nom.
-- S'il n'a pas d'adresse.
+## Add Cloudinary and Mapbox API key
 
-Une réservation n'est pas valide :
+In order to enjoy the website, you will need to import your own Mapbox API key in a .env file at the root of the folder.
 
-- Si elle n'a pas de date de début.
-- Si elle n'a pas de date de fin.
+Create the .env file
 
-La suppression d'un hôtel doit entraîner la suppression de ses chambres et de ses réservations. La suppression d'une chambre doit entraîner la suppression de ses réservations.
+```shell
+touch .env
+```
 
-**NB :** La gem `devise` a déjà été ajoutée et la table `users` a déjà été créée.
+Add the API keys inside, it should look like something like this
 
-**NB :** Il n'est pas demandé d'implémenter de système de geocoding pour l'adresse de l'hôtel.
+```shell
+MAPBOX_API_KEY=pk.eyJ1IjoiZmXXosw
+```
 
-## Interface utilisateur
+## Initialize the database
 
-Effectuez les modifications du code nécessaires à l'implémentation des parcours utilisateurs suivants :
+```shell
+rails db:create db:migrate db:seed
+```
 
-- En tant qu'utilisateur, je peux accéder à la page d'accueil.
-- En tant qu'utilisateur, je peux voir la liste de toutes les chambres.
-- En tant qu'utilisateur, je peux accéder aux détails d'une chambre.
-- En tant qu'utilisateur, je peux réserver une chambre.
+## Serve
 
-## Spécifications
+Launch in two different terminal windows:
 
-- Respectez les conventions de `rails`.
-- La page d'accueil doit contenir un lien permettant d'accéder à la liste des chambres.
-- La page listant les chambres doit contenir les liens permettant d'accéder aux détails de chaque chambre.
-- La page affichant les détails d'une chambre doit contenir un lien permettant de retourner sur la page listant toutes les chambres.
-- La page affichant les détails d'une chambre doit contenir le formulaire permettant de faire une réservation.
-- Le formulaire de réservation doit utiliser un sélecteur de date <a href="https://flatpickr.js.org/examples/" target="_blank">Flatpickr</a> pour faciliter la saisie des dates, de type <a href="https://flatpickr.js.org/examples/#range-calendar" target="_blank">range</a>, le plus adapté a la saisie d'une période.
-- Lors de la soumission du formulaire de réservation, l'utilisateur doit être redirigé vers la page de détails de la chambre et une <a href="https://www.rubyguides.com/2019/11/rails-flash-messages/" target="_blank">notification flash</a> doit s'afficher pour confirmer la réservation.
+```shell
+rails s
+```
 
-## Ressources
+```shell
+yarn build --watch
+```
 
-Pour avoir une interface soignée, nous vous conseillons d'utiliser :
+## Enjoy
 
-- <a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank">Bootstrap</a> (déjà installé)
-- <a href="https://uikit.lewagon.com/" target="_blank">L'UI Kit du Wagon</a>
+Go to the provided link that should look like `http://127.0.0.1:3000`
